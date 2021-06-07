@@ -1,0 +1,154 @@
+
+- 1.01.1 -
+Had a rough idea of the implementation. Initialized the global variables and finished the main method.
+
+- 1.01.2 -
+Filled the grid with rocks and finished the print_dung() function.
+After testing realized that I have to initialize it as 21x80 due to nature of pointers in c
+
+- 1.01.3 -
+Finished smaller methods such as placable() and place(). Started the make_rooms() method.
+Personally found this quite challenging.
+
+- 1.01.4 -
+After roughly 2 hours, came up with a solution for make_rooms().
+Also finished smaller methods such as path_up()
+
+- 1.01.5 -
+Ran into issue such as incomplete paths and one room always being unconnected.
+Found out that I was using the rooms[][] array in the wrong way. Got the x and y values mixed up.
+I also run into a weird pointer issue again and also had errors with the if statements.
+Ex: if(condition)
+      do_this();
+Found that it was skipping all methods it was suppose to do.
+Error: segmentation fault(core dumped) - because I again mixed up the x and y values
+Also in the last hour found out that my left and right movement statements were reversed. Fixed. All done.
+There were much more errors, only mentioning the ones that took me time to figure out using gdb :)
+
+------------------------
+
+- 1.02.1 -
+Confused about how exactly the load and save ordering works. But the pdf was pretty detailed so im confident.
+
+- 1.02.2 -
+Ran into a lot of error with fread and fwrite. I was struggling to even read the file type marker and had no clue as
+to what a semantic type is. Still don't know. RIP.
+
+- 1.02.3 -
+Realized the I need to work from the bottom up so I removed all new code. Started with load since it was the harder one.
+Finally got to reading the file type after hours.
+
+- 1.02.4 -
+After figuring out how to get the file type correct the rest was a breeze, just had to change a few values for the other lines.
+Literally copy pasted the load into save() and removed the usless things. But still confused about only using --save.
+Also finished the main(), where I manage the switches using both argc and argv.
+
+- 1.02.5 -
+Packaged for submission and ofc submitted.
+
+------------------------
+
+- 1.03.1 -
+To save myself some time, I decided to use professor Jeremy's code. If not I would've had to change all my code to implement
+the same using structs. So in order to use his code, I spent a lot of time trying to understand why he is doing what he is doing.
+
+- 1.03.2 -
+After reading the announcment on Canvas, I realized that this will be fairly simple. Made a new method to start Dijkstra's and
+deleted the first if statement in the while loops to avoid short cuirciting the code and also added the four other if statements.
+
+- 1.03.3 -
+Realized that I need to split the dijkstra's into two methods, one for tunneling and one for non-tunneling. So I did the same.
+THe last thing I need to add waht the costofcurrentpos + hardnessofdestination/85 + 1 as instructed in the pdf. Overall using
+the professors code made this assignment fairly short.
+
+------------------------
+
+- 1.04.1 -
+I was scared to split my files up into different files like Jeremy's 1.03 solution, so I continue to use my 1.03 code.
+Started by making the new structs and changed my tunneling and non tunneling maps to match the same. Also stopped printing the
+tunneling maps.
+
+- 1.04.2 -
+Made the generate_monsters() method. This was fairly simple once I layed out the layout of the structs. A lot of change was made to
+the monster struct. Also started the generate_moves() method and made some progress. Keep in mind that I decided to make a struct for the
+monsters and set their type there based on the if statement in the generate_monster() method.
+
+- 1.04.3 -
+I made a big mistake. I accidentally deleted my rlg327.c file :/ :'( I had to start from scratch.
+
+- 1.04.4 -
+Somehow managed to re-write all the code. But I had to submit something before 10pm. Please don't grade that.
+Apart from that I spent the whole night working on the main method and the changelog and readme.
+
+------------------------
+
+- 1.05.1 -
+Continuing to use Jeremy's code base. Made a test.c to play around with ncurses and understand it better.
+Once that was done, I started at rlg327.c and change the main method accordingly to start using ncurses.
+
+- 1.05.2 -
+Didn't know that we cant use putchar in the render_dungeon method so I did some googling and changed it to mvaddch().
+Also started working on pc.c, where my actually movement and monsterlist recide.
+
+- 1.05.3 -
+The assignment so far was easy, but monster list was giving me a bug where if the code was in a while loop, it stops
+listening for input. Decided to split up the method monster_list() into smaller healper methods and also use a do-while
+loop to work around the bug.
+
+- 1.05.4 -
+Packed for submission.
+
+------------------------
+
+- 1.06.1 -
+Again using Jeremy's code from 1.05 and building on that. Visited TA hours and found out that we need to convert all the
+files from c to c++. Thought this would be hard, but the TA told me it takes just 10 or 20 mins. Found out that I just
+need to change the major structs to classes and change the makefile to compile with c++. Then just change the casting errors
+
+- 1.06.2 -
+Successfully converted everything to c++. That was not too bad! :) Started by making the necessary data structures of this
+assignment. That was only the pc_known array. Then started to made a simple function to clear the array.
+
+- 1.06.3 -
+Made the io_display changes but was getting a segfault. Clearly something with the bounds. Have to investigate.
+EDIT: found out that it was a mistake in the for loop value. Mistyped that.
+
+- 1.06.4 -
+Possibly the hardest part of this assignment, had to implement the teleport mechanic. Decided to adapte Jeremy's code.
+
+- 1.06.5 -
+@6:13am finally finished the io_teleport_pc() method all thats left is the main. Hopefully simple.
+
+- 1.06.6 -
+Packaged for submission.
+
+------------------------
+
+- 1.07 -
+
+Changing the format of my changelog. Find it too long to write. I'm lazy. ¯\_(ツ)_/¯
+
+10/29 3:00 pm Started the assignment after testing the string class seperately. Understood how to use substr() and compare().
+10/29 12:43 am I don't know why but string.substr.compare(string) was not working for my if statement. decided to do it old fashioned.
+10/29 2:34 am Parsing works according to the assignment spec. Making the dice class.
+10/30 4:25 pm Dice was pretty simple. Just splicing the string and converting to int using atoi(string.c_str()).
+10/30 7:44 pm Packged for submission.
+
+------------------------
+
+- 1.08 - 
+
+11/4 12:35pm - Imported code drop. Fixed macros.h and started making the outline.
+11/4 7:02pm - Made changes to all header files and started working on gen_mon. 
+11/6 3:56pm - Spent 2 days trying to debug. Finally conculded that pyrite was messing up. Switched to linux. 
+11/7 4:34am - gen_mon done. gen_obj started. decided to keep it simple using vectors.
+11/7 6:01pm - Packaged for submission
+
+------------------------
+
+- 1.09 -
+
+11/13 7:30 pm - Worked all night implementing and testing the inventory lists.
+11/14 3:04 pm - Finally got monster list to work.
+11/14 5:53 pm - Packaged for submission
+
